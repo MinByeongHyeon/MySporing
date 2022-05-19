@@ -4,60 +4,37 @@
 <mapper namespace="User">
 
 
-	<!--220517강사님꺼 짜집기 상태 참고용  -->
-	
-	<!-- 아이디 중복검사 -->
-	<select id="checkId" parameterType="string" resultType="_int">
-		select count(memberId) from tbl_member 
-		where memberId = #{memberId}
-	</select>
-	
-	<!-- 회원 가입 -->
-	<insert id="join" parameterType="userVO">
-		insert into tbl_member
-		(
-			memberId, memberPw, memberName, memberAge, memberGender, memberEmail, 
-			memberZipcode, memberAddress, memberAddressDetail
-		)
-		values
-		(
-			#{memberId}, #{memberPw}, #{memberName}, #{memberAge}, #{memberGender}, #{memberEmail},
-			 #{memberZipcode}, #{memberAddress}, #{memberAddressDetail}
-		 )
-	</insert>
 	
 	<!-- 로그인 -->
 	<select id="login" parameterType="map" resultType="_int">
-		select memberNumber from tbl_member where memberId=#{memberId} and memberPw=#{memberPw}
-	</select>
+      select num 
+      from tbl_user 
+      where email=#{user_email} and password=#{user_password}
+   </select>
 	
-	<!-- 회원 정보 조회 -->
-	<select id="getInfo" parameterType="_int" resultType="userVO">
-		select 
-			memberId, memberPw, memberName, memberAge, memberGender, memberEmail, 
-			memberZipcode, memberAddress, memberAddressDetail 
-		from tbl_member where memberNumber = #{memberNumber}			
-	</select>
-
-	
-	<update id="modify" parameterType="member">
-		UPDATE TABLE_MEMBER 
-		SET	NAME = #{name}, AGE = #{age}
-		WHERE ID = #{id}
+	<!-- 회원 삭제 -->
+	<update id="user_delete" parameterType="_int" >
+		UPDATE tbl_user
+		SET status = #{status}
+		WHERE num = #{user_num}
 	</update>
-	
-	<delete id="remove" parameterType="string">
-		DELETE FROM TABLE_MEMBER WHERE ID = #{id}
-	</delete>
-	
-	<select id="findId" parameterType="map" resultType="string">
-		SELECT * FROM TABLE_MEMBER 
-		WHERE NAME = #{name} AND PW = #{pw}
+	<!-- 회원정보수정 -->
+	<update id="user_update" parameterType="user_num">
+		UPDATE tbl_user
+		SET name = #{user_name}, password=#{user_password}, gender=#{user_gender}, phone=#{user_phone},profile=#{user_profile}
+		WHERE num = #{user_num}
+	</update>
+	<!-- 회원정보 가져오기  -->
+	<select id="getUserDetail" parameterType="_int" resultType="UserVO">
+		select email,password,name,gender,birthday,phone,profile,state
+		from tbl_user 
+		where num=#{user_num} and memberPw=#{memberPw}
 	</select>
 	
-	<select id="findMember" resultType="member">
-		SELECT ID, PW, NAME, AGE FROM TABLE_MEMBER
-		WHERE AGE != 20
-	</select>
+	
+	
+	
+	
+	
 	
 </mapper>

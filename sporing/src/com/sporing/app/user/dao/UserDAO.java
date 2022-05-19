@@ -17,9 +17,10 @@ public class UserDAO {
 		sqlSession = sqlSessionFactory.openSession(true);
 	}
 	
-	// 중복검사
-	public boolean checkId(String id) {
-		return (Integer)(sqlSession.selectOne("User.checkId",id)) == 1;
+	
+	/*// 중복검사
+	public boolean checkemail(String email) {
+		return (Integer)(sqlSession.selectOne("User.checkId",email)) == 1;
 	}
 	
 	// 회원가입
@@ -56,6 +57,43 @@ public class UserDAO {
 	// 나이 조회
 	public List<UserVO> findMember() {
 		return sqlSession.selectList("Member.findMember");
-	}
+	}*/
+	
+	
+	
+	
+	
+	// 로그인
+	   public boolean login(String user_email, String user_password) {
+	      HashMap<String, String> loginMap = new HashMap<>();
+	      loginMap.put("user_email", user_email);
+	      loginMap.put("user_password", user_password);
+	      return (Integer)(sqlSession.selectOne("User.login",loginMap)) == 1;
+	   }
+	
+	
+	
+	
+	
+		
+		//회원 탈퇴
+		public void user_delete(int user_num){
+			sqlSession.update("User.user_delete",user_num);
+		}
+	
+		//회원정보 하나 끌고 오기
+		public UserVO getUserDetail(int user_num) {
+			// TODO Auto-generated method stub
+			return sqlSession.selectOne("User.getUserDetail", user_num);
+			
+		}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
