@@ -9,4 +9,46 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+   <servlet>
+     <servlet-name>UserFrontController</servlet-name>
+     <servlet-class>com.sporing.app.user.controller.UserFrontController</servlet-class>
+	  </servlet>
+	  
+	  <servlet>
+	     <servlet-name>IntroFrontController</servlet-name>
+	     <servlet-class>com.sporing.app.intro.controller.IntroFrontController</servlet-class>
+	  </servlet>
+	  <servlet>
+	     <servlet-name>LoungeFrontController</servlet-name>
+	     <servlet-class>com.sporing.app.lounge.controller.LoungeFrontController</servlet-class>
+	  </servlet>
+	  <servlet>
+	     <servlet-name>RecruitFrontController</servlet-name>
+	     <servlet-class>com.sporing.app.recruit.controller.RecruitFrontController</servlet-class>
+	  </servlet>
+	  <servlet>
+	     <servlet-name>TeamFrontController</servlet-name>
+	     <servlet-class>com.sporing.app.team.controller.TeamFrontController</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	     <servlet-name>UserFrontController</servlet-name>
+	     <url-pattern>*.us</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	     <servlet-name>IntroFrontController</servlet-name>
+	     <url-pattern>*.in</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	     <servlet-name>LoungeFrontController</servlet-name>
+	     <url-pattern>*.lo</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	     <servlet-name>RecruitFrontController</servlet-name>
+	     <url-pattern>*.re</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	     <servlet-name>TeamFrontController</servlet-name>
+	     <url-pattern>*.te</url-pattern>
+	  </servlet-mapping>
 </web-app>
