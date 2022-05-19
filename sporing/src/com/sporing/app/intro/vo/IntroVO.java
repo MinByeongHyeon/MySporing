@@ -8,11 +8,22 @@ public class IntroVO {
 	private String intro_start_time;
 	private String intro_end_time;
 	private String intro_grade;
-	private String intro_phone;
 	private String intro_highlight;
 	private String intro_user;
 	private String intro_createAt;
 	private String intro_status;
+	private String intro_slicing;
+	
+	
+	public String getIntro_slicing() {
+		return intro_slicing;
+	}
+	public void setIntro_slicing(String intro_slicing) {
+		this.intro_slicing = intro_slicing;
+	}
+	public void setIntro_state(String intro_state) {
+		this.intro_state = intro_state;
+	}
 	public int getIntro_num() {
 		return intro_num;
 	}
@@ -27,9 +38,6 @@ public class IntroVO {
 	}
 	public String getIntro_state() {
 		return intro_state;
-	}
-	public void setIntro_state(String intro_state) {
-		this.intro_state = intro_state;
 	}
 	public String getIntro_date() {
 		return intro_date;
@@ -54,12 +62,6 @@ public class IntroVO {
 	}
 	public void setIntro_grade(String intro_grade) {
 		this.intro_grade = intro_grade;
-	}
-	public String getIntro_phone() {
-		return intro_phone;
-	}
-	public void setIntro_phone(String intro_phone) {
-		this.intro_phone = intro_phone;
 	}
 	public String getIntro_highlight() {
 		return intro_highlight;
@@ -86,8 +88,8 @@ public class IntroVO {
 		this.intro_status = intro_status;
 	}
 	public IntroVO(int intro_num, String intro_category, String intro_state, String intro_date, String intro_start_time,
-			String intro_end_time, String intro_grade, String intro_phone, String intro_highlight, String intro_user,
-			String intro_createAt, String intro_status) {
+			String intro_end_time, String intro_grade, String intro_highlight, String intro_user, String intro_createAt,
+			String intro_status, String intro_slicing) {
 		super();
 		this.intro_num = intro_num;
 		this.intro_category = intro_category;
@@ -96,12 +98,13 @@ public class IntroVO {
 		this.intro_start_time = intro_start_time;
 		this.intro_end_time = intro_end_time;
 		this.intro_grade = intro_grade;
-		this.intro_phone = intro_phone;
 		this.intro_highlight = intro_highlight;
 		this.intro_user = intro_user;
 		this.intro_createAt = intro_createAt;
 		this.intro_status = intro_status;
+		this.intro_slicing = intro_slicing;
 	}
+
 	
 	
 	

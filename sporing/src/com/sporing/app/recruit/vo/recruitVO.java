@@ -15,7 +15,16 @@ public class recruitVO {
 	private String recriut_user;
 	private String recriut_createAt;
 	private String recriut_status;
+	private String recriut_slicing;
 	
+	public String getRecriut_slicing() {
+		return recriut_slicing;
+	}
+
+	public void setRecriut_slicing(String recriut_slicing) {
+		this.recriut_slicing = recriut_slicing;
+	}
+
 	public recruitVO() {;}
 
 	public int getRecriut_num() {
@@ -133,7 +142,7 @@ public class recruitVO {
 	public recruitVO(int recriut_num, String recriut_category, String recriut_grade, String recriut_gender,
 			String recriut_ground_name, String recriut_ground_addr, String recriut_game_date, String recriut_start_time,
 			String recriut_end_time, String recriut_fee, String recriut_content, String recriut_user,
-			String recriut_createAt, String recriut_status) {
+			String recriut_createAt, String recriut_status, String recriut_slicing) {
 		super();
 		this.recriut_num = recriut_num;
 		this.recriut_category = recriut_category;
@@ -149,7 +158,9 @@ public class recruitVO {
 		this.recriut_user = recriut_user;
 		this.recriut_createAt = recriut_createAt;
 		this.recriut_status = recriut_status;
+		this.recriut_slicing = recriut_slicing;
 	}
+
 
 	
 	
